@@ -1,8 +1,8 @@
-# TimedInheritance
+# Timed Inheritance
 
 A self‑custody inheritance vault written in **Solidity 0.8.20**. The **owner** can withdraw ETH (or just “ping” with 0 ETH) to stay active. If 30 days pass with no activity, the **heir** can claim ownership and appoint the next heir.
 
-> Built with **Foundry**; includes unit tests & gas report.
+> Built with **Foundry**; includes unit tests, gas report & one-click Sepolia deployment.
 
 ---
 
