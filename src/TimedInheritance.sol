@@ -22,6 +22,14 @@ contract TimedInheritance {
         _;
     }
 
+    constructor(address _heir) payable {
+        require(_heir != address(0), "Heir = zero");
+        owner = msg.sender;
+        heir = _heir;
+        lastPing = block.timestamp;
+    }
+
+
     
 
 }
