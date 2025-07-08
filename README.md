@@ -14,7 +14,7 @@ A self‑custody inheritance vault written in **Solidity 0.8.20**. The **owner*
 | **Idle period**   | `30 days` (compile‑time `constant`)                         |
 | **Key functions** | `withdraw(uint256)`, `claimOwnership()`, `setHeir(address)` |
 | **Events**        | `Ping`, `Withdrawal`, `HeirChanged`, `OwnershipTaken`       |
-| **External libs** | None (pure Solidity)                                        |
+| **External libs** | None                                                        |
 
 
 ---
