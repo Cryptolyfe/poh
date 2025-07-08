@@ -7,4 +7,9 @@ contract TimedInheritance {
     uint256 public lastPing;
     uint256 public constant IDLE_PERIOD = 30 days;
 
+    event Ping(address indexed by, uint256 at);
+    event HeirChanged(address indexed previous, address indexed newHeir);
+    event OwnershipTaken(address indexed previousOwner, address indexed newOwner);
+    event Withdrawl(address indexed by, uint256 amount);
+
 }
