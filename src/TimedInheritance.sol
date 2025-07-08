@@ -29,6 +29,19 @@ contract TimedInheritance {
         lastPing = block.timestamp;
     }
 
+    function withdraw(uint256 amount) external onlyOwner {
+        lastPing = block.timestamp;
+        emit Ping(msg.sender, lastPing);
+
+        if (amount > 0) {
+            require(address(this).balance >= amount, "insufficient balance");
+            (bool ok, ) = payable(msg.sender).call{value: amount}("");
+            require(ok, "Transfer failed");
+            emit Withdrawl(msg.sender, amount);
+        }
+    }
+
+
 
     
 
