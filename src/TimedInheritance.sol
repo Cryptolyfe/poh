@@ -2,5 +2,9 @@
 pragma solidity ^0.8.20;
 
 contract TimedInheritance {
-    // we’ll fill this in next steps
+    address public owner;
+    address public heir;
+    uint256 public lastPing;
+    uint256 public constant IDLE_PERIOD = 30 days;
+
 }
