@@ -81,9 +81,3 @@ cast call <ADDR> owner() --rpc-url $ETH_RPC_URL
 * **Re‑entrancy safe** – state updated *before* external ETH send.
 * **Idle period is immutable** – change requires redeploy.
 * **Gas‑safe send** – uses `call{value: …}` post‑EIP‑1884.
-
----
-
-## License
-
-[MIT](LICENSE)
