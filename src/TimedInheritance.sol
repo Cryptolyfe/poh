@@ -12,4 +12,16 @@ contract TimedInheritance {
     event OwnershipTaken(address indexed previousOwner, address indexed newOwner);
     event Withdrawl(address indexed by, uint256 amount);
 
+    modifier onlyOwner(){
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    modifier onlyHeir(){
+        require(msg.sender == heir, "Not heir");
+        _;
+    }
+
+    
+
 }
