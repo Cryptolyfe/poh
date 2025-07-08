@@ -41,6 +41,26 @@ contract TimedInheritance {
         }
     }
 
+        /// @notice Heir claims ownership if owner idle ≥30 days
+    function claimOwnership() external onlyHeir {
+        require(block.timestamp >= lastPing + IDLE_PERIOD, "Owner active");
+        address previous = owner;
+        owner = heir;
+        heir = address(0);                   // new owner must set next heir
+        emit OwnershipTaken(previous, owner);
+    }
+
+    /// @notice Owner chooses the next heir
+    function setHeir(address _newHeir) external onlyOwner {
+        require(_newHeir != address(0), "Heir = zero");
+        emit HeirChanged(heir, _newHeir);
+        heir = _newHeir;
+    }
+
+    /// @notice Accept plain ETH transfers
+    receive() external payable {}
+
+
 
 
     
