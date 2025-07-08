@@ -16,17 +16,6 @@ A self‑custody inheritance vault written in **Solidity 0.8.20**. The **owner*
 | **Events**        | `Ping`, `Withdrawal`, `HeirChanged`, `OwnershipTaken`       |
 | **External libs** | None (pure Solidity)                                        |
 
-### Flow diagram
-
-```mermaid
-graph LR
-subgraph Active Phase
-  Owner -- withdraw / ping --> Contract(lastPing = now)
-end
-Heir -. waits ≥30d .-> Claim{{claimOwnership}}
-Claim --> NewOwner[Owner = Heir]
-NewOwner --> AppointHeir[setHeir]
-```
 
 ---
 
